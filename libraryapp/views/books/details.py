@@ -16,7 +16,7 @@ def get_book(book_id):
         SELECT
             b.id,
             b.title,
-            b.isbn,
+            b.ISBN,
             b.author,
             b.year_published,
             b.librarian_id,
