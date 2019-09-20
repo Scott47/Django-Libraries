@@ -1,13 +1,7 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Library</title>
-</head>
+  {% extends 'shared/base.html' %}
 
-<body>
+  {% block content %}
     <h1>Inventory Book</h1>
 
     {% if book.id is not None %}
@@ -29,8 +23,8 @@
             <input id="year_published" type="number" name="year_published" value="{{ book.year_published }}">
         </fieldset>
         <fieldset>
-            <label for="isbn">ISBN: </label>
-            <input id="isbn" type="text" name="isbn" value="{{ book.isbn }}">
+            <label for="ISBN">ISBN: </label>
+            <input id="ISBN" type="text" name="ISBN" value="{{ book.ISBN }}">
         </fieldset>
         <fieldset>
             <label for="location">Library: </label>
@@ -48,8 +42,5 @@
         {% else %}
             <input type="submit" value="Create" />
         {% endif %}
-
     </form>
-</body>
-
-</html>
+    {% endblock %}

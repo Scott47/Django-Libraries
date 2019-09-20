@@ -49,14 +49,14 @@ def book_details(request, book_id):
                 UPDATE libraryapp_book
                 SET title = ?,
                     author = ?,
-                    isbn = ?,
+                    ISBN = ?,
                     year_published = ?,
                     location_id = ?
                 WHERE id = ?
                 """,
                 (
                     form_data['title'], form_data['author'],
-                    form_data['isbn'], form_data['year_published'],
+                    form_data['ISBN'], form_data['year_published'],
                     form_data["location"], book_id,
                 ))
 
