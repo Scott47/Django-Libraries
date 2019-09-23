@@ -44,14 +44,14 @@ def book_list(request):
             db_cursor.execute("""
             INSERT INTO libraryapp_book
             (
-                title, author, isbn,
+                title, author, ISBN,
                 year_published, location_id, librarian_id
             )
             VALUES (?, ?, ?, ?, ?, ?)
             """,
             (form_data['title'], form_data['author'],
-                form_data['isbn'], form_data['year_published'],
-                request.user.librarian.id, form_data["location"]))
+                form_data['ISBN'], form_data['year_published'],
+                form_data["location"], request.user.librarian.id ))
 
         return redirect(reverse('libraryapp:books'))
 
